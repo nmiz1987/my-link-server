@@ -4,7 +4,8 @@
 	"description": "my own links server",
 	"main": "server.js",
 	"scripts": {
-		"server": "nodemon server.js"
+		"server": "nodemon server.js",
+		"start": "node server.js"
 	},
 	"author": "Netanel Mizrahi",
 	"license": "MIT",
