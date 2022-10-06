@@ -13,15 +13,4 @@ router.get("/", async (req, res) => {
 	}
 });
 
-//Deleting all DB
-router.delete("/superDeletion", async (req, res) => {
-	console.log("deleting all DB...");
-	try {
-		await Item.deleteMany({});
-		res.json({ message: "All the DB deleted!" });
-	} catch (err) {
-		res.status(500).json({ message: err.message });
-	}
-});
-
 module.exports = router;
