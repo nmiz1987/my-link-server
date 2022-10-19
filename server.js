@@ -23,6 +23,9 @@ const db = mongoose.connection;
 db.on("error", (error) => console.log(error));
 db.once("open", () => console.log("Connected to DataBase"));
 
+const messagesRouter = require("./routes/messages");
+app.use("/messages", messagesRouter);
+
 const linksRouter = require("./routes/links");
 app.use("/my-links/all", linksRouter);
 
