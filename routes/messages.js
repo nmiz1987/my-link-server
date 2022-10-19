@@ -32,7 +32,7 @@ async function getItem(req, res, next) {
 }
 
 //create new item
-router.post("/new", checkPassword, async (req, res) => {
+router.post("/new", async (req, res) => {
 	try {
 		const item = new Item({
 			name: req.body.name,
