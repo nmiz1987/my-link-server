@@ -8,7 +8,7 @@ const messageSchema = new mongoose.Schema(
 		email: {
 			type: String,
 		},
-		description: {
+		message: {
 			type: String,
 		},
 		lastUpdate: {

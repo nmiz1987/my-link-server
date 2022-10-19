@@ -32,21 +32,21 @@ async function getItem(req, res, next) {
 }
 
 //create new item
-// router.post("/new", async (req, res) => {
-// 	try {
-// 		const item = new Item({
-// 			name: req.body.name,
-// 			email: req.body.email,
-// 			description: req.body.description,
-// 		});
-// 		const newItem = await item.save();
-// 		console.log("Message send successfully: ", newItem);
+router.post("/new", checkPassword, async (req, res) => {
+	try {
+		const item = new Item({
+			name: req.body.name,
+			email: req.body.email,
+			message: req.body.message,
+		});
+		const newItem = await item.save();
+		console.log("Message send successfully: ", newItem);
 
-// 		res.status(201).send(newItem);
-// 	} catch (err) {
-// 		res.status(400).json({ message: err.message });
-// 	}
-// });
+		res.status(201).send(newItem);
+	} catch (err) {
+		res.status(400).json({ message: err.message });
+	}
+});
 
 //Deleting all DB - will be access only from external application for security!!
 // router.delete("/superDeletion", async (req, res) => {
